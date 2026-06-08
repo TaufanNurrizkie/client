@@ -8,48 +8,13 @@ import {
   FaRegComment,
   FaPaperPlane,
   FaRegBookmark,
+  
 } from "react-icons/fa";
-import { FaComment } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const HomeView = () => {
   return (
-    <div className="flex min-h-screen bg-base-200">
-      {/* Sidebar */}
-      <aside className="hidden lg:flex w-64 px-6 py-6 flex-col justify-between sticky top-0 h-screen overflow-hidden shadow-md shadow-info">
-        <div className="">
-          <h1 className="text-5xl font-logo mb-10">JustGram</h1>
-          <ul className="menu gap-3 text-base">
-            <li>
-              <a href="">
-                <FaHome /> Home
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <FaSearch /> Search
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <FaPlusSquare /> Create
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <FaUserCircle /> Profile
-              </a>
-            </li>
-          </ul>
-        </div>
-        <button className="btn btn-outline btn-sm">Log Out</button>
-      </aside>
-      <aside className="hidden md:flex lg:hidden w-20 shadow-md shadow-info flex-col items-center py-6 gap-8 sticky top-0 h-screen overflow-hidden">
-        <FaHome className="text-2xl cursor-pointer" />
-        <FaSearch className="text-2xl cursor-pointer" />
-        <FaPlusSquare className="text-2xl cursor-pointer" />
-        <FaUserCircle className="text-2xl cursor-pointer" />
-        <FaSignOutAlt className="text-2xl cursor-pointer" />
-      </aside>
+    <>
       {/* Main Content */}
       <main className="flex-1 flex justify-center pb-16 md:pb-0">
         <div className="w-full max-w-xl">
@@ -62,7 +27,9 @@ const HomeView = () => {
                     <img src="https://i.pravatar.cc/150?img=1" alt="" />
                   </div>
                 </div>
-                <span className="font-semibold text-sm">John Doe</span>
+                <Link to={"/john_doe"} className="font-semibold text-sm">
+                  John Doe
+                </Link>
               </div>
               <span className="cursor-pointer">...</span>
             </div>
@@ -98,14 +65,7 @@ const HomeView = () => {
           </div>
         </div>
       </main>
-      <nav className="fixed bottom-0 left-0 right-0 bg-base-300 flex justify-around py-3 md:hidden">
-        <FaHome className="text-2xl cursor-pointer" />
-        <FaSearch className="text-2xl cursor-pointer" />
-        <FaPlusSquare className="text-2xl cursor-pointer" />
-        <FaUserCircle className="text-2xl cursor-pointer" />
-        <FaSignOutAlt className="text-2xl text-error cursor-pointer" />
-      </nav>
-    </div>
+    </>
   );
 };
 
