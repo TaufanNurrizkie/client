@@ -29,7 +29,7 @@ const LoginView = () => {
                 className="input input-bordered w-full bg-base-200 mb-3"
               />
 
-              <button className="btn w-full bg-info">Login</button>
+              <button className="btn w-full bg-info">Log In</button>
             </div>
           </div>
 
