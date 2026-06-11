@@ -5,17 +5,10 @@ import DetailUserView from "./Views/DetailUserView";
 import LoginView from "./Views/LoginView";
 import AuthLayout from "./Layouts/AuthLayout";
 import HomeLayout from "./Layouts/HomeLayout";
-import {
-  FaHome,
-  FaPlusSquare,
-  FaSearch,
-  FaUserCircle,
-  FaSignOutAlt,
-  FaHeart,
-  FaRegComment,
-  FaPaperPlane,
-  FaRegBookmark,
-} from "react-icons/fa";
+import {} from "react-icons/fa";
+import CreateFeedView from "./Views/CreateFeedView";
+import UpdateUserView from "./Views/UpdateUserView";
+import SearchView from "./Views/SearchView";
 
 function App() {
   return (
@@ -23,7 +16,10 @@ function App() {
       <Routes>
         <Route element={<HomeLayout />}>
           <Route path="/" element={<HomeView />} />
+          <Route path="/create" element={<CreateFeedView />}></Route>
           <Route path="/:username" element={<DetailUserView />} />
+          <Route path="/setting" element={<UpdateUserView />}></Route>
+          <Route path="/search" element={<SearchView />}></Route>
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginView />} />

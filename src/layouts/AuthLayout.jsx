@@ -1,7 +1,13 @@
 import { Outlet } from "react-router-dom";
+import { useAuthStore } from "../stores/authStore";
+import { Navigate } from "react-router-dom";
 
 const AuthLayout = () => {
-  return (
+
+  const { isAuthentication } = useAuthStore();
+ 
+
+  return !isAuthentication ? (
     <>
       <main className="min-h-[80vh] flex items-center justify-center bg-base-200">
         <Outlet />
@@ -21,6 +27,8 @@ const AuthLayout = () => {
         </aside>
       </footer>
     </>
+  ) : (
+    <Navigate to={"/"} replace />
   );
 };
 
